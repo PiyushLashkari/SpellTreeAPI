@@ -1,0 +1,13 @@
+spring:
+  profiles.active: test
+---
+spring:
+  profiles: test
+server.port: 1100
+application:
+  decryptionKey: test
+mysql:
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://sjc-dbdl-mysql4:3306/spelladm
+  username: spelladm
+  password: kinpFII7LlxOsAUOqjdXg7yFflS4LGho
