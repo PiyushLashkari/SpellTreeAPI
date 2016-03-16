@@ -31,7 +31,7 @@ public class ControllerIT {
 	@Before
 	public void setUp() throws Exception {
 		this.base = new URL("http://localhost:" + port
-				+ "/enableindia/api/test/Testing");
+				+ "/spelltree/api/test/Testing");
 		template = new TestRestTemplate();
 	}
 

@@ -39,6 +39,6 @@ public class Util {
 		} catch (Exception e) {
 			LOGGER.error("Error occurred while decrypting password", e);
 		}
-		return "spelladm";
+		return encryptedPassword;
 	}
 }

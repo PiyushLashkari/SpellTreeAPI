@@ -5,12 +5,12 @@ spring:
   profiles: dev
 server.port: 1100
 application:
-  decryptionKey: dev
+  decryptionKey: 
 mysql:
   driverClassName: com.mysql.jdbc.Driver
   url: jdbc:mysql://sjc-dbdl-mysql4:3306/spelladm
   username: spelladm
-  password: kinpFII7LlxOsAUOqjdXg7yFflS4LGho
+  password: VJFR0z8A7wB5ti5s9hRfILhgrb9Vqx6i
 ---
 spring:
   profiles: prod

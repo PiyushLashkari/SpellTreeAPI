@@ -22,6 +22,7 @@ import com.codahale.metrics.annotation.Timed;
  * 
  */
 @RestController
+@RequestMapping(value = "spelltree/api")
 public class Controller {
 
 	// defining the slf4j Logger Object
@@ -40,7 +41,7 @@ public class Controller {
 	 * @return returns the value of the path variable passed in.
 	 */
 	@Timed(name = "test", absolute = true)
-	@RequestMapping(value = "/enableindia/api/test/{name}", method = RequestMethod.GET)
+	@RequestMapping(value = "/test/{name}", method = RequestMethod.GET)
 	public String test(@PathVariable String name) {
 		LOGGER.info("test() received params: " + "name: " + name);
 		return name;
@@ -53,7 +54,7 @@ public class Controller {
 	 * @return returns the details of category.
 	 */
 	@Timed(name = "category-details", absolute = true)
-	@RequestMapping(value = "/enableindia/api/category/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
 	public Category categoryDetails(@PathVariable String id) {
 		
 		return categoryService.getCategoryDetails(id);
@@ -66,9 +67,9 @@ public class Controller {
 	 * @return returns the list of categories.
 	 */
 	@Timed(name = "category-list", absolute = true)
-	@RequestMapping(value = "/enableindia/api/category/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/category/list", method = RequestMethod.GET)
 	public List<Category> categoryList(@RequestParam(value = "updated", required = false) Boolean updated) {
-		if(updated)
+		if(updated != null && updated == true)
 			return categoryService.getAllUpdatedCategories();
 		else
 			return categoryService.getAllCategories();
@@ -82,7 +83,7 @@ public class Controller {
 	 * @return returns the list of categories.
 	 */
 	@Timed(name = "content-list", absolute = true)
-	@RequestMapping(value = "/enableindia/api/category/{id}/content", method = RequestMethod.GET)
+	@RequestMapping(value = "/category/{id}/content", method = RequestMethod.GET)
 	public List<Content> contentList(
 			@PathVariable String id,
 			@RequestParam(value = "exercise-id", required = false) String exerciseId) {
